@@ -1,0 +1,3 @@
+twirp:
+  type: twirp
+  resource: .

@@ -1,0 +1,6 @@
+zolex_twirp:
+  services:
+    App\Twirp\ExampleService:
+      prefix: '/examples.twirp-server-symfony'
+    App\Twirp\UselessService:
+      prefix: '/useless.example.prefix'

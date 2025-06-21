@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<psalm
+        errorLevel="7"
+        resolveFromConfigFile="true"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://getpsalm.org/schema/config"
+        xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+        findUnusedBaselineEntry="false"
+        findUnusedCode="false"
+        findUnusedIssueHandlerSuppression="false"
+        ensureOverrideAttribute="false"
+>
+    <projectFiles>
+        <directory name="src"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+            <file name="src/DependencyInjection/Configuration.php"/>
+            <file name="src/Resources/server.php"/>
+        </ignoreFiles>
+    </projectFiles>
+
+    <forbiddenFunctions>
+        <function name="empty"/>
+    </forbiddenFunctions>
+    <plugins>
+        <pluginClass class="Zolex\PsalmMarkdownReport\Plugin"/>
+    </plugins>
+</psalm>
