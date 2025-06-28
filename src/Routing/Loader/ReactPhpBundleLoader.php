@@ -29,7 +29,7 @@ final class ReactPhpBundleLoader extends Loader
 
     public function setProjectDir(string $path): void
     {
-        $this->publicPath = rtrim($path, '/') . '/public';
+        $this->publicPath = rtrim($path, '/').'/public';
     }
 
     public function setAssetPaths(array $paths): void
@@ -42,16 +42,16 @@ final class ReactPhpBundleLoader extends Loader
         $routes = new RouteCollection();
         foreach ($this->assetPaths as $assetPath) {
             $target = trim($assetPath, '/');
-            if (!is_readable($this->publicPath . '/'. $target)) {
-                user_error('Tried to register "'. $target . '" asset path, but it does not exist or is not readable.', E_USER_WARNING);
+            if (!is_readable($this->publicPath.'/'.$target)) {
+                trigger_error('Tried to register "'.$target.'" asset path, but it does not exist or is not readable.', \E_USER_WARNING);
                 continue;
             }
 
-            if (is_file($this->publicPath . '/'. $target)) {
+            if (is_file($this->publicPath.'/'.$target)) {
                 $routes->add(
-                    name: 'zolex:reactphp_bundle:' . str_replace('/', '_', $target),
+                    name: 'zolex:reactphp_bundle:'.str_replace('/', '_', $target),
                     route: new Route(
-                        path: '/' . $target,
+                        path: '/'.$target,
                         defaults: [
                             '_controller' => 'zolex.reactphp_bundle.serve_bundle_assets_action',
                             'directory' => '/',
@@ -62,9 +62,9 @@ final class ReactPhpBundleLoader extends Loader
                 );
             } else {
                 $routes->add(
-                    name: 'zolex:reactphp_bundle:' . str_replace('/', '_', $target),
+                    name: 'zolex:reactphp_bundle:'.str_replace('/', '_', $target),
                     route: new Route(
-                        path: '/' . $target . '/{file}',
+                        path: '/'.$target.'/{file}',
                         defaults: [
                             '_controller' => 'zolex.reactphp_bundle.serve_bundle_assets_action',
                             'directory' => $target,

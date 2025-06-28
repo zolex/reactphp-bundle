@@ -24,7 +24,7 @@ final class ServeBundleAssetsAction
 
     public function __invoke(string $directory, string $file)
     {
-        $baseDir = $this->projectDir.'/public'. ('/' !== $directory ? '/'.$directory : '');
+        $baseDir = $this->projectDir.'/public'.('/' !== $directory ? '/'.$directory : '');
         $path = realpath($baseDir.'/'.$file);
         if (false === $path || !is_readable($path) || is_dir($path) || !str_starts_with($path, $baseDir)) {
             throw new NotFoundHttpException();
