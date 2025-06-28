@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	file \
 	gettext \
 	git \
-    libpq-dev \
     libicu-dev \
     libzip-dev \
 	&& rm -rf /var/lib/apt/lists/*

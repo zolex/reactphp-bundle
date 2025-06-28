@@ -14,12 +14,14 @@
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Symfony](https://img.shields.io/badge/symfony-%23000000.svg?style=for-the-badge&logo=symfony&logoColor=white)
 
-A Symfony Bundle providing a Runtime for ReactPHP, a PSR-17 Kernel and a Router to serve assets.
+A Symfony Bundle providing a Runtime for [ReactPHP](https://github.com/reactphp/reactphp), a PSR-17 Kernel and a Router to serve assets.
+
+Turn any Symfony project into a "self-serving" application, no traditional webserver required.
 
 ### Installation
 
 ```bash
-composer require zolex/react-bundleF
+composer require zolex/reactphp-bundle
 ```
 
 ### Configuration
@@ -65,3 +67,5 @@ zolex_react_php:
 ```bash
 APP_RUNTIME="Zolex\\ReactPhpBundle\\Runtime\\ReactPhpRuntime" php public/index.php
 ```
+
+For a very basic docker example, check the [Dockerfile](./docs/Dockerfile) in the docs folder.
