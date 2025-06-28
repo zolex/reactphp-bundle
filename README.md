@@ -1,13 +1,13 @@
 # ReactPHP Symfony Bundle
 
-[![Release](https://github.com/zolex/ReactPhpBundle/workflows/Release/badge.svg)](https://github.com/zolex/ReactPhpBundle/actions)
-![Version](https://img.shields.io/packagist/v/zolex/ReactPhpBundle)
-[![Integration](https://github.com/zolex/ReactPhpBundle/workflows/Integration/badge.svg)](https://github.com/zolex/ReactPhpBundle/actions)
-[![Code Coverage](https://codecov.io/gh/zolex/ReactPhpBundle/graph/badge.svg?token=Swt3B6XMUw)](https://codecov.io/gh/zolex/ReactPhpBundle)
+[![Release](https://github.com/zolex/reactphp-bundle/workflows/Release/badge.svg)](https://github.com/zolex/ReactPhpBundle/actions)
+![Version](https://img.shields.io/packagist/v/zolex/reactphp-bundle)
+[![Integration](https://github.com/zolex/reactphp-bundle/workflows/Integration/badge.svg)](https://github.com/zolex/reactphp-bundle/actions)
+[![Code Coverage](https://codecov.io/gh/zolex/reactphp-bundle/graph/badge.svg?token=Swt3B6XMUw)](https://codecov.io/gh/zolex/reactphp-bundle)
 
 
-![License](https://img.shields.io/packagist/l/zolex/ReactPhpBundle)
-![Downloads](https://img.shields.io/packagist/dt/zolex/ReactPhpBundle)
+![License](https://img.shields.io/packagist/l/zolex/reactphp-bundle)
+![Downloads](https://img.shields.io/packagist/dt/zolex/reactphp-bundle)
 
 ![ReactPhpBundle](docs/logo.jpg)
 
