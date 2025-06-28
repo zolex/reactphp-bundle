@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the ReactBundle package.
+ * This file is part of the ReactPhpBundle package.
  *
  * (c) Andreas Linden <zlx@gmx.de>
  *
@@ -12,7 +12,7 @@ declare(strict_types=1);
  */
 
 use App\Kernel;
-use Zolex\ReactBundle\Kernel\KernelPsr17Adapter;
+use Zolex\ReactPhpBundle\Kernel\KernelPsr17Adapter;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 

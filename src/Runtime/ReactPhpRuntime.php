@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the ReactBundle package.
+ * This file is part of the ReactPhpBundle package.
  *
  * (c) Andreas Linden <zlx@gmx.de>
  *
@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Zolex\ReactBundle\Runtime;
+namespace Zolex\ReactPhpBundle\Runtime;
 
 use Psr\Http\Server\RequestHandlerInterface;
 use Symfony\Component\Dotenv\Dotenv;
@@ -20,7 +20,7 @@ use Symfony\Component\Runtime\Internal\MissingDotenv;
 use Symfony\Component\Runtime\Internal\SymfonyErrorHandler;
 use Symfony\Component\Runtime\RunnerInterface;
 
-class ReactRuntime extends GenericRuntime
+class ReactPhpRuntime extends GenericRuntime
 {
     public function __construct(array $options = [])
     {
@@ -68,7 +68,7 @@ class ReactRuntime extends GenericRuntime
     public function getRunner(?object $application): RunnerInterface
     {
         if ($application instanceof RequestHandlerInterface) {
-            return new ReactRunner(new ServerFactory($this->options), $application);
+            return new ReactPhpRunner(new ServerFactory($this->options), $application);
         }
 
         return parent::getRunner($application);

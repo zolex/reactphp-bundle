@@ -1,15 +1,15 @@
 # ReactPHP Symfony Bundle
 
-[![Release](https://github.com/zolex/ReactBundle/workflows/Release/badge.svg)](https://github.com/zolex/ReactBundle/actions)
-![Version](https://img.shields.io/packagist/v/zolex/ReactBundle)
-[![Integration](https://github.com/zolex/ReactBundle/workflows/Integration/badge.svg)](https://github.com/zolex/ReactBundle/actions)
-[![Code Coverage](https://codecov.io/gh/zolex/ReactBundle/graph/badge.svg?token=Swt3B6XMUw)](https://codecov.io/gh/zolex/ReactBundle)
+[![Release](https://github.com/zolex/ReactPhpBundle/workflows/Release/badge.svg)](https://github.com/zolex/ReactPhpBundle/actions)
+![Version](https://img.shields.io/packagist/v/zolex/ReactPhpBundle)
+[![Integration](https://github.com/zolex/ReactPhpBundle/workflows/Integration/badge.svg)](https://github.com/zolex/ReactPhpBundle/actions)
+[![Code Coverage](https://codecov.io/gh/zolex/ReactPhpBundle/graph/badge.svg?token=Swt3B6XMUw)](https://codecov.io/gh/zolex/ReactPhpBundle)
 
 
-![License](https://img.shields.io/packagist/l/zolex/ReactBundle)
-![Downloads](https://img.shields.io/packagist/dt/zolex/ReactBundle)
+![License](https://img.shields.io/packagist/l/zolex/ReactPhpBundle)
+![Downloads](https://img.shields.io/packagist/dt/zolex/ReactPhpBundle)
 
-![ReactBundle](docs/logo.jpg)
+![ReactPhpBundle](docs/logo.jpg)
 
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Symfony](https://img.shields.io/badge/symfony-%23000000.svg?style=for-the-badge&logo=symfony&logoColor=white)
@@ -19,7 +19,7 @@ A Symfony Bundle providing a Runtime for ReactPHP, a PSR-17 Kernel and a Router 
 ### Installation
 
 ```bash
-composer require zolex/react-bundle
+composer require zolex/react-bundleF
 ```
 
 ### Configuration
@@ -30,7 +30,7 @@ To run your symfony application using the ReactPHP server. You need to modify th
 <?php
 
 use App\Kernel;
-use Zolex\ReactBundle\Kernel\KernelPsr17Adapter;
+use Zolex\ReactPhpBundle\Kernel\KernelPsr17Adapter;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
@@ -51,7 +51,7 @@ react_bundle:
 ### Start the server
 
 ```bash
-APP_RUNTIME="Zolex\\ReactBundle\\Runtime\\ReactRuntime" php public/index.php
+APP_RUNTIME="Zolex\\ReactPhpBundle\\Runtime\\ReactPhpRuntime" php public/index.php
 ```
 
 ### Credits

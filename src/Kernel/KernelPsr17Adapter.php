@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the ReactBundle package.
+ * This file is part of the ReactPhpBundle package.
  *
  * (c) Andreas Linden <zlx@gmx.de>
  *
@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Zolex\ReactBundle\Kernel;
+namespace Zolex\ReactPhpBundle\Kernel;
 
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseInterface;

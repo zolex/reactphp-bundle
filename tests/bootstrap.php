@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the ReactBundle package.
+ * This file is part of the ReactPhpBundle package.
  *
  * (c) Andreas Linden <zlx@gmx.de>
  *

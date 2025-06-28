@@ -1,5 +1,5 @@
 {
-    "name": "zolex/react-bundle",
+    "name": "zolex/reactphp-bundle",
     "description": "ReactPHP Bundle for Symfony",
     "type": "symfony-bundle",
     "license": "MIT",
@@ -28,24 +28,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Zolex\\ReactBundle\\": "src/"
+            "Zolex\\ReactPhpBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Zolex\\ReactBundle\\Test\\": "tests/"
+            "Zolex\\ReactPhpBundle\\Test\\": "tests/"
         }
     },
     "require-dev": {
         "symfony/framework-bundle": "^6.4|^7.0"
 
-    },
-    "scripts": {
-        "test": "vendor/phpunit/phpunit/phpunit"
-    },
-    "suggest": {
-        "symfony/panther": "For End-to-End testing with a real Twirp Server and Client (see EndToEndTestCase).",
-        "guzzlehttp/psr7": "PSR-17 request factory"
     },
     "config": {
         "allow-plugins": {

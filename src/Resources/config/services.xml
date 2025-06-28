@@ -4,12 +4,12 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services
         https://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="zolex.react_bundle.serve_bundle_assets_action" class="Zolex\ReactBundle\Action\ServeBundleAssetsAction" public="true">
+        <service id="zolex.reactphp_bundle.serve_bundle_assets_action" class="Zolex\ReactPhpBundle\Action\ServeBundleAssetsAction" public="true">
             <tag name="controller.service_arguments"/>
             <argument>%kernel.project_dir%</argument>
         </service>
 
-        <service id="zolex.react_bundle.routing.loader" class="Zolex\ReactBundle\Routing\Loader\ReactBundleLoader">
+        <service id="zolex.reactphp_bundle.routing.loader" class="Zolex\ReactPhpBundle\Routing\Loader\ReactPhpBundleLoader">
             <tag name="routing.loader"/>
         </service>
     </services>

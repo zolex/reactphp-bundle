@@ -30,7 +30,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 WORKDIR /app
 
-ENV APP_RUNTIME "Zolex\\ReactBundle\\Runtime\\ReactRuntime"
+ENV APP_RUNTIME "Zolex\\ReactPhpBundle\\Runtime\\ReactPhpRuntime"
 ENV REACT_HOST "0.0.0.0"
 
 COPY . .

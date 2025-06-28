@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the ReactBundle package.
+ * This file is part of the ReactPhpBundle package.
  *
  * (c) Andreas Linden <zlx@gmx.de>
  *
@@ -16,7 +16,7 @@ if (!file_exists(__DIR__.'/src')) {
 }
 
 $fileHeaderComment = <<<'EOF'
-This file is part of the ReactBundle package.
+This file is part of the ReactPhpBundle package.
 
 (c) Andreas Linden <zlx@gmx.de>
 

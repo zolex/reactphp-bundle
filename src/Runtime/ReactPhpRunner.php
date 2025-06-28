@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the ReactBundle package.
+ * This file is part of the ReactPhpBundle package.
  *
  * (c) Andreas Linden <zlx@gmx.de>
  *
@@ -11,12 +11,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Zolex\ReactBundle\Runtime;
+namespace Zolex\ReactPhpBundle\Runtime;
 
 use Psr\Http\Server\RequestHandlerInterface;
 use Symfony\Component\Runtime\RunnerInterface;
 
-class ReactRunner implements RunnerInterface
+class ReactPhpRunner implements RunnerInterface
 {
     private RequestHandlerInterface $application;
     private ServerFactory $serverFactory;

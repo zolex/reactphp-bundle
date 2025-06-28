@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the ReactBundle package.
+ * This file is part of the ReactPhpBundle package.
  *
  * (c) Andreas Linden <zlx@gmx.de>
  *
@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Zolex\ReactBundle\DependencyInjection;
+namespace Zolex\ReactPhpBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -20,20 +20,16 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('zolex_react');
-        //        $rootNode = $treeBuilder->getRootNode();
-        //
-        //        $rootNode
-        //            ->children()
-        //                ->arrayNode('services')
-        //                    ->useAttributeAsKey('class')
-        //                    ->arrayPrototype()
-        //                    ->performNoDeepMerging()
-        //                    ->children()
-        //                        ->scalarNode('prefix')->defaultValue('/twirp')->end()
-        //                    ->end()
-        //                ->end()
-        //            ->end();
+        $treeBuilder = new TreeBuilder('zolex_reactphp');
+        /*
+        $rootNode = $treeBuilder->getRootNode();
+        $rootNode
+            ->children()
+                ->arrayNode('asset_paths')
+                    ->arrayPrototype()
+                ->end()
+            ->end();
+        */
 
         return $treeBuilder;
     }
