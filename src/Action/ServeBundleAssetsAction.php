@@ -22,16 +22,12 @@ final class ServeBundleAssetsAction
     {
     }
 
-    public function __invoke(string $file)
+    public function __invoke(string $directory, string $file)
     {
-        $path = $this->projectDir.'/public/bundles/'.$file;
-
-        if (!is_readable($path)) {
-            throw new NotFoundHttpException("'$file' is not readable.");
-        }
-
-        if (is_dir($path)) {
-            throw new NotFoundHttpException("'$file' is a directory.");
+        $baseDir = $this->projectDir.'/public'. ('/' !== $directory ? '/'.$directory : '');
+        $path = realpath($baseDir.'/'.$file);
+        if (false === $path || !is_readable($path) || is_dir($path) || !str_starts_with($path, $baseDir)) {
+            throw new NotFoundHttpException();
         }
 
         $contentType = match (pathinfo($path)['extension']) {

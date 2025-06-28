@@ -20,16 +20,15 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('zolex_reactphp');
-        /*
+        $treeBuilder = new TreeBuilder('zolex_react_php');
         $rootNode = $treeBuilder->getRootNode();
         $rootNode
             ->children()
                 ->arrayNode('asset_paths')
-                    ->arrayPrototype()
+                    ->defaultValue(['/bundles'])
+                    ->stringPrototype()
                 ->end()
             ->end();
-        */
 
         return $treeBuilder;
     }

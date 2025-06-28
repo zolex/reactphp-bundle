@@ -34,5 +34,7 @@ class ZolexReactPhpExtension extends Extension implements CompilerPassInterface
 
     public function process(ContainerBuilder $container)
     {
+        $routeLoader = $container->getDefinition('zolex.reactphp_bundle.routing.loader');
+        $routeLoader->addMethodCall('setAssetPaths', [$this->config['asset_paths']]);
     }
 }

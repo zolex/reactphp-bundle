@@ -11,6 +11,9 @@
 
         <service id="zolex.reactphp_bundle.routing.loader" class="Zolex\ReactPhpBundle\Routing\Loader\ReactPhpBundleLoader">
             <tag name="routing.loader"/>
+            <call method="setProjectDir">
+                <argument>%kernel.project_dir%</argument>
+            </call>
         </service>
     </services>
 </container>

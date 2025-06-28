@@ -41,11 +41,23 @@ return function (array $context) {
 
 ### Assets
 
-To allow serving public bundle assets (like API-Platform's Swagger-UI) through ReactPHP, add this file to your project `config/routes/react_bundle.yaml`
+To allow serving assets from the public directory through ReactPHP, add this file to your project `config/routes/react_bundle.yaml`
 ```yaml
-react_bundle:
-  type: react_bundle
+reactphp_bundle:
+  type: reactphp_bundle
   resource: .
+```
+
+By default, only files in the `public/bundles` directory are served (like Swagger-UI in API-Platform).
+Additional directories and files can be registered in the bundle config at `config/bundles/zolex_react_php.yaml`:
+
+```yaml
+zolex_react_php:
+    asset_paths:
+        - /bundles/
+        - /custom-dir/
+        - /single-file.js
+        - /another/single/file.css
 ```
 
 ### Start the server
@@ -53,7 +65,3 @@ react_bundle:
 ```bash
 APP_RUNTIME="Zolex\\ReactPhpBundle\\Runtime\\ReactPhpRuntime" php public/index.php
 ```
-
-### Credits
-
-This bundle is inspired by [runtime/reactphp](https://github.com/php-runtime/reactphp).
