@@ -13,23 +13,47 @@ declare(strict_types=1);
 
 namespace Zolex\ReactPhpBundle\Runtime;
 
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use React\EventLoop\Loop;
+use React\Http\HttpServer;
+use React\Socket\SocketServer;
 use Symfony\Component\Runtime\RunnerInterface;
+use Zolex\ReactPhpBundle\Kernel\KernelPsr17Adapter;
 
 class ReactPhpRunner implements RunnerInterface
 {
-    private RequestHandlerInterface $application;
-    private ServerFactory $serverFactory;
+    private const DEFAULT_OPTIONS = [
+        'host' => '127.0.0.1',
+        'port' => 8080,
+    ];
 
-    public function __construct(ServerFactory $serverFactory, RequestHandlerInterface $application)
+    private array $options;
+
+    private KernelPsr17Adapter $kernel;
+
+    public function __construct(private readonly RequestHandlerInterface $requestHandler, array $options = [])
     {
-        $this->serverFactory = $serverFactory;
-        $this->application = $application;
+        $options['host'] = $options['host'] ?? $_SERVER['REACT_HOST'] ?? $_ENV['REACT_HOST'] ?? self::DEFAULT_OPTIONS['host'];
+        $options['port'] = $options['port'] ?? $_SERVER['REACT_PORT'] ?? $_ENV['REACT_PORT'] ?? self::DEFAULT_OPTIONS['port'];
+
+        $this->options = array_replace_recursive(self::DEFAULT_OPTIONS, $options);
     }
 
     public function run(): int
     {
-        $loop = $this->serverFactory->createServer($this->application);
+        $loop = Loop::get();
+        $loop->addSignal(\SIGTERM, function (int $signal) {
+            exit(128 + $signal);
+        });
+
+        $server = new HttpServer($loop, function (ServerRequestInterface $request) {
+            return $this->requestHandler->handle($request);
+        });
+
+        $socket = new SocketServer(\sprintf('%s:%s', $this->options['host'], $this->options['port']), [], $loop);
+        $server->listen($socket);
+
         $loop->run();
 
         return 0;

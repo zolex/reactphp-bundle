@@ -15,10 +15,12 @@ namespace Zolex\ReactPhpBundle\Runtime;
 
 use Psr\Http\Server\RequestHandlerInterface;
 use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Runtime\GenericRuntime;
 use Symfony\Component\Runtime\Internal\MissingDotenv;
 use Symfony\Component\Runtime\Internal\SymfonyErrorHandler;
 use Symfony\Component\Runtime\RunnerInterface;
+use Zolex\ReactPhpBundle\Kernel\KernelPsr17Adapter;
 
 class ReactPhpRuntime extends GenericRuntime
 {
@@ -67,8 +69,12 @@ class ReactPhpRuntime extends GenericRuntime
 
     public function getRunner(?object $application): RunnerInterface
     {
-        if ($application instanceof RequestHandlerInterface) {
-            return new ReactPhpRunner(new ServerFactory($this->options), $application);
+        if ($application instanceof KernelInterface) {
+            if (!$application instanceof RequestHandlerInterface) {
+                $application = new KernelPsr17Adapter($application);
+            }
+
+            return new ReactPhpRunner($application, $this->options);
         }
 
         return parent::getRunner($application);

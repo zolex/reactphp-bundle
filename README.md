@@ -24,22 +24,13 @@ Turn any Symfony project into a "self-serving" application, no traditional webse
 composer require zolex/reactphp-bundle
 ```
 
-### Configuration
+### Start the server
 
-To run your symfony application using the ReactPHP server. You need to modify the default `public/index.php` (or create a new file like `app.php`) with the following content.
-
-```php
-<?php
-
-use App\Kernel;
-use Zolex\ReactPhpBundle\Kernel\KernelPsr17Adapter;
-
-require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
-
-return function (array $context) {
-    return new KernelPsr17Adapter(new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']));
-};
+```bash
+APP_RUNTIME="Zolex\\ReactPhpBundle\\Runtime\\ReactPhpRuntime" php public/index.php
 ```
+
+For a very basic docker example, check the [Dockerfile](./docs/Dockerfile) in the docs folder.
 
 ### Assets
 
@@ -61,11 +52,3 @@ zolex_react_php:
         - /single-file.js
         - /another/single/file.css
 ```
-
-### Start the server
-
-```bash
-APP_RUNTIME="Zolex\\ReactPhpBundle\\Runtime\\ReactPhpRuntime" php public/index.php
-```
-
-For a very basic docker example, check the [Dockerfile](./docs/Dockerfile) in the docs folder.
